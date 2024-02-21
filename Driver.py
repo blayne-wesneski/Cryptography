@@ -8,16 +8,75 @@ Description: This program is a culmination of all the cipher programs I have wri
              It also contains the ability to conduct a frequency analysis on a given ciphertext.
 """
 
-import sys
+from encrypt import *
+from decrypt import *
 
-sys.path.insert(0, './Ciphers/Affine')
-sys.path.insert(0, './Ciphers/Caeser')
-sys.path.insert(0, './Ciphers/Keyword')
-sys.path.insert(0, './Ciphers/Polybius Square')
-sys.path.insert(0, './Ciphers/Viginere')
-sys.path.insert(0, './Misc/Frequency Analysis')
-sys.path.insert(0, './Misc/Quick Modulo')
+def main():
+    function = input("""What would you like to do?
+                     (1) Encrypt a message with a cipher?
+                     (2) Decrypt a message with a cipher?
+                     (3) Conduct a frequency analysis on a ciphertext?
+                     """)
+    match function:
+        case "1":
+            encrypt()
+        case "2":
+            decrypt()
+        case "3":
+            frequency_analysis()
+        case _:
+            print("Invalid input. Exiting.")
+            exit()
 
-from affine_driver import affine
+
+def encrypt():
+    cipher_choice = input("""What cipher would you like to encrypt with?
+                     (1) Affine
+                     (2) Caesar
+                     (3) Keyword
+                     (4) Polybius Square
+                     (5) Vigenere
+                     """)
+    match cipher_choice:
+        case "1":
+            decrypt_affine()
+        case "2":
+            decrypt_caesar()
+        case "3":
+            decrypt_keyword()
+        case "4":
+            decrypt_polybius()
+        case "5":
+            decrypt_vigenere()
+        case _:
+            print("Invalid input. Exiting.")
+            exit()
+
+def decrypt():
+    cipher_choice = input("""What cipher would you like to decrypt with?
+                     (1) Affine
+                     (2) Caesar
+                     (3) Keyword
+                     (4) Polybius Square
+                     (5) Vigenere
+                     """)
+    match cipher_choice:
+        case "1":
+            decrypt_affine()
+        case "2":
+            decrypt_caesar()
+        case "3":
+            decrypt_keyword()
+        case "4":
+            decrypt_polybius()
+        case "5":
+            decrypt_vigenere()
+        case _:
+            print("Invalid input. Exiting.")
+            exit()
+
+def frequency_analysis():
+    text = input("What text would you like to analyze?")
 
 
+main()
