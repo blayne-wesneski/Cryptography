@@ -99,6 +99,7 @@ def decrypt():
 def frequency_analysis():
     text = input("What text would you like to analyze?")
     analyze(text)
+    pause = input("Press enter to continue.")
 
 
 # Quick Modulo
@@ -113,6 +114,7 @@ def quick_modulo():
 
     # Call the "logic" function with the user input as arguments
     logic(first, second)
+    pause = input("Press enter to continue.")
 
 
 # begin encrypt functions
@@ -123,18 +125,21 @@ def encrypt_affine():
     a = int(input("Please input the first key. "))
     b = int(input("Please input the second key. "))
     affine_encrypt(plaintext, a, b)
+    pause = input("Press enter to continue.")
 
 
 def encrypt_caesar():
     plaintext = input("What is the plaintext you would like to encrypt? ")
     key = int(input("What is the key you would like to use? "))
     caeser_encrypt(plaintext, key)  # Call the encrypt function
+    pause = input("Press enter to continue.")
 
 
 def encrypt_keyword():
     plaintext = input("Enter the text you would like to encrypt: ")
     keyword = input("Enter the keyword you would like to use: ")
     keyword_encrypt(plaintext, keyword)
+    pause = input("Press enter to continue.")
 
 
 def encrypt_polybius():
@@ -157,12 +162,14 @@ def encrypt_polybius():
 
     # Display the ciphertext
     print("The ciphertext is: " + ciphertext)
+    pause = input("Press enter to continue.")
 
 
 def encrypt_vigenere():
     plaintext = input("Enter plaintext: ")
     key = input("Enter key: ")
     viginere_encrypt(plaintext, key)  # Call the encrypt function
+    pause = input("Press enter to continue.")
 
 
 # begin decrypt functions
@@ -171,6 +178,7 @@ def decrypt_affine():
     a = int(input("Please input the first key. "))
     b = int(input("Please input the second key. "))
     affine_decrypt(ciphertext, a, b)
+    pause = input("Press enter to continue.")
 
 
 def decrypt_caesar():
@@ -191,12 +199,14 @@ def decrypt_caesar():
         case _:
             print("Invalid input. Exiting.")
             exit()
+    pause = input("Press enter to continue.")
 
 
 def decrypt_keyword():
     ciphertext = input("Enter the text you would like to decrypt: ")
     keyword = input("Enter the key you would like to use: ")
     keyword_decrypt(ciphertext, keyword)
+    pause = input("Press enter to continue.")
 
 
 def decrypt_polybius():
@@ -218,12 +228,14 @@ def decrypt_polybius():
     plaintext = polybius_decrypt(ciphertext, square)
 
     print("The plaintext is: " + plaintext)
+    pause = input("Press enter to continue.")
 
 
 def decrypt_vigenere():
     ciphertext = input("Enter ciphertext: ")
     key = input("Enter key: ")
     viginere_decrypt(ciphertext, key)  # Call the decrypt function
+    pause = input("Press enter to continue.")
 
 
 main()
